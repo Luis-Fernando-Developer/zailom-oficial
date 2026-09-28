@@ -119,6 +119,14 @@ export default function Home() {
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       if (progress.current) progress.current.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
+      const systemMap = document.querySelector<HTMLElement>(".system-map");
+      if (systemMap) {
+        const rect = systemMap.getBoundingClientRect();
+        const start = window.innerHeight * 0.88;
+        const end = window.innerHeight * 0.12;
+        const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+        systemMap.style.setProperty("--map-progress", progress.toFixed(3));
+      }
     };
     const reveals = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
