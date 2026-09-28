@@ -6,14 +6,28 @@ services:
     container_name: zailom-oficial
     restart: unless-stopped
     networks:
-      - bookingZailom_net
+      - zailom-ofc
+
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.zailom-oficial.rule=Host(\`zailom.com\`) || Host(\`www.zailom.com\`)"
+      - "traefik.docker.network=zailom-ofc"
+
+      # HTTP -> HTTPS
+      - "traefik.http.routers.zailom-oficial-http.rule=Host(`zailom.com`) || Host(`www.zailom.com`)"
+      - "traefik.http.routers.zailom-oficial-http.entrypoints=web"
+      - "traefik.http.routers.zailom-oficial-http.middlewares=zailom-oficial-redirect"
+      - "traefik.http.middlewares.zailom-oficial-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.zailom-oficial-redirect.redirectscheme.permanent=true"
+
+      # HTTPS
+      - "traefik.http.routers.zailom-oficial.rule=Host(`zailom.com`) || Host(`www.zailom.com`)"
       - "traefik.http.routers.zailom-oficial.entrypoints=websecure"
       - "traefik.http.routers.zailom-oficial.tls=true"
-      - "traefik.http.routers.zailom-oficial.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.zailom-oficial.tls.certresolver=leresolver"
+      - "traefik.http.routers.zailom-oficial.service=zailom-oficial"
+
       - "traefik.http.services.zailom-oficial.loadbalancer.server.port=3000"
+
 networks:
-  bookingZailom_net:
+  zailom-ofc:
     external: true
