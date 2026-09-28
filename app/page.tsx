@@ -269,7 +269,7 @@ export default function Home() {
 
       <section id="manifesto" className="manifesto">
         <div className="manifesto-sticky">
-          <div className="manifesto-side"><span>01</span><span>THE IDEA</span></div>
+          
           <div className="manifesto-content">
             <span className="section-kicker">UM ECOSSISTEMA, NÃO UM MONTE DE FERRAMENTAS</span>
             <h2>Quando tudo<br /><span>conversa,</span><br />o negócio flui.</h2>
