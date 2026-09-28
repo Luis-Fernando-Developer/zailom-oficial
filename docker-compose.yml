@@ -1,0 +1,19 @@
+services:
+  zailom-oficial:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zailom-oficial
+    restart: unless-stopped
+    networks:
+      - bookingZailom_net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.zailom-oficial.rule=Host(\`zailom.com\`) || Host(\`www.zailom.com\`)"
+      - "traefik.http.routers.zailom-oficial.entrypoints=websecure"
+      - "traefik.http.routers.zailom-oficial.tls=true"
+      - "traefik.http.routers.zailom-oficial.tls.certresolver=letsencrypt"
+      - "traefik.http.services.zailom-oficial.loadbalancer.server.port=3000"
+networks:
+  bookingZailom_net:
+    external: true
