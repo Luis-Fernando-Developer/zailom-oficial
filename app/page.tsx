@@ -77,11 +77,13 @@ export default function Home() {
       <div className="scroll-cue"><span>SCROLL</span><ChevronDown size={16}/></div>
     </section>
 
-    <section id="ecosystem" className="statement">
-      <div className="statement-pin">
-        <span className="eyebrow">UM ECOSSISTEMA, NÃO UM MONTE DE FERRAMENTAS</span>
-        <h2>Quando tudo<br/><span>conversa,</span><br/>o negócio flui.</h2>
-        <p>A Zailom reúne as peças que fazem uma operação digital acontecer — do primeiro contato ao agendamento, da automação à comunicação.</p>
+    <section id="ecosystem" className="statement-stage">
+      <div className="statement">
+        <div className="statement-pin">
+          <span className="eyebrow">UM ECOSSISTEMA, NÃO UM MONTE DE FERRAMENTAS</span>
+          <h2>Quando tudo<br/><span>conversa,</span><br/>o negócio flui.</h2>
+          <p>A Zailom reúne as peças que fazem uma operação digital acontecer — do primeiro contato ao agendamento, da automação à comunicação.</p>
+        </div>
       </div>
     </section>
 
