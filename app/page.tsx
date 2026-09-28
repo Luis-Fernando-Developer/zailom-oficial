@@ -150,28 +150,24 @@ function FlowMockup() {
 function WhatsAppMockup() {
   return (
     <div className="product-ui whatsapp-ui">
-      <div className="wa-sidebar">
+      <div className="wa-infra-head">
         <div className="ui-logo">Z<span>●</span></div>
-        <small>COMUNICAÇÃO</small>
-        <span className="wa-active"><MessageCircle size={13}/> Visão geral</span>
-        <span><MessageCircle size={13}/> Instâncias</span>
-        <span><Send size={13}/> Mensagens</span>
-        <span><Network size={13}/> Webhooks</span>
-        <span><Zap size={13}/> Eventos</span>
+        <span>COMMUNICATION INFRASTRUCTURE</span>
+        <b>WHATSAPP</b>
       </div>
-      <div className="wa-main">
-        <div className="ui-topbar"><span>WhatsApp / Visão geral</span><span className="ui-avatar">LF</span></div>
-        <div className="wa-heading"><div><small>INFRAESTRUTURA</small><b>Comunicação conectada.</b></div><span className="wa-live">● 3 ATIVAS</span></div>
-        <div className="wa-cards">
-          <div><small>INSTÂNCIAS</small><strong>03</strong><span>todas conectadas</span></div>
-          <div><small>MENSAGENS HOJE</small><strong>1.284</strong><span>+14,2%</span></div>
-          <div><small>EVENTOS</small><strong>426</strong><span>processados</span></div>
-        </div>
-        <div className="wa-content">
-          <div className="wa-panel"><div className="ui-panel-head"><b>Instâncias</b><span>Ver todas</span></div><p><i className="dot green"/> Atendimento <b>online</b><em>+5511••••8821</em></p><p><i className="dot green"/> Comercial <b>online</b><em>+5538••••1044</em></p><p><i className="dot yellow"/> Suporte <b>conectando</b><em>+5531••••2210</em></p></div>
-          <div className="wa-panel wa-message-panel"><div className="ui-panel-head"><b>Última atividade</b><span>agora</span></div><div className="wa-message"><span>10:42</span><b>Booking → WhatsApp</b><small>Novo agendamento confirmado</small></div><div className="wa-message"><span>10:39</span><b>Flow → WhatsApp</b><small>Jornada de atendimento acionada</small></div></div>
-        </div>
+      <div className="wa-infra-canvas">
+        <div className="wa-infra-line line-a" />
+        <div className="wa-infra-line line-b" />
+        <div className="wa-infra-line line-c" />
+        <div className="wa-infra-source source-booking"><CalendarDays size={16}/><small>BOOKING</small><b>Agendamento</b></div>
+        <div className="wa-infra-source source-flow"><Workflow size={16}/><small>FLOW</small><b>Automação</b></div>
+        <div className="wa-infra-core"><MessageCircle size={24}/><strong>WHATSAPP</strong><span>CAMADA DE COMUNICAÇÃO</span></div>
+        <div className="wa-infra-instance instance-one"><i/><small>INSTÂNCIA 01</small><b>Atendimento</b><span>ONLINE</span></div>
+        <div className="wa-infra-instance instance-two"><i/><small>INSTÂNCIA 02</small><b>Comercial</b><span>ONLINE</span></div>
+        <div className="wa-infra-instance instance-three"><i/><small>INSTÂNCIA 03</small><b>Suporte</b><span>STANDBY</span></div>
+        <div className="wa-infra-events"><span>EVENT STREAM</span><b>1.284</b><small>mensagens processadas hoje</small></div>
       </div>
+      <div className="wa-infra-footer"><span>WEBHOOKS</span><span>EVENTOS</span><span>TEMPLATES</span><span>INSTÂNCIAS</span><b>API CONNECTED</b></div>
     </div>
   );
 }
@@ -346,7 +342,7 @@ export default function Home() {
 
       <section className="manifesto-wide reveal">
         <div className="giant-word">CONECTAR<span>.</span></div>
-        <div className="wide-caption"><span>06 / A NOSSA VISÃO</span><p>Construir tecnologia que desaparece na operação — porque o importante não é a ferramenta. É o que o negócio consegue fazer quando tudo está conectado.</p></div>
+        <div className="wide-caption"><span>06 / A NOSSA VISÃO</span><p>Construir tecnologia que simplifica a operação — porque o importante não é a ferramenta. É o que o negócio consegue fazer quando tudo está conectado.</p></div>
       </section>
 
       <section className="closing reveal">
