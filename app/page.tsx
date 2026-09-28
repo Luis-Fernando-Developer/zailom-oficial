@@ -70,8 +70,113 @@ const modules = [
   ["08", "API", "Integrações para levar a Zailom para outros sistemas."],
 ];
 
+function BookingMockup() {
+  return (
+    <div className="product-ui booking-ui">
+      <div className="product-ui-sidebar">
+        <div className="ui-logo">Z<span>●</span></div>
+        <div className="ui-company"><b>Minha empresa</b><small>painel empresarial</small></div>
+        <div className="ui-nav">
+          <span className="ui-active"><CalendarDays size={13} /> Dashboard</span>
+          <span><CalendarDays size={13} /> Agendamentos</span>
+          <span><UsersIcon size={13} /> Clientes</span>
+          <span><Layers3 size={13} /> Serviços</span>
+          <span><Network size={13} /> Profissionais</span>
+          <span><Zap size={13} /> Financeiro</span>
+        </div>
+      </div>
+      <div className="product-ui-main">
+        <div className="ui-topbar"><span>Dashboard</span><span className="ui-avatar">LF</span></div>
+        <div className="ui-welcome"><div><small>VISÃO GERAL</small><b>Bom dia, sua operação.</b></div><span className="ui-date">28 SET 2026</span></div>
+        <div className="ui-stat-grid">
+          <div><small>AGENDAMENTOS HOJE</small><strong>24</strong><em>+12% esta semana</em></div>
+          <div><small>ESTA SEMANA</small><strong>118</strong><em>agenda em movimento</em></div>
+          <div><small>RECEITA DO MÊS</small><strong>R$ 8,4k</strong><em>+18,4% no período</em></div>
+          <div><small>CLIENTES</small><strong>342</strong><em>base ativa</em></div>
+        </div>
+        <div className="ui-lower-grid">
+          <div className="ui-panel ui-chart">
+            <div className="ui-panel-head"><b>Movimento da agenda</b><span>Últimos 7 dias</span></div>
+            <div className="ui-bars"><i/><i/><i/><i/><i/><i/><i/></div>
+            <div className="ui-days"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div>
+          </div>
+          <div className="ui-panel ui-status">
+            <div className="ui-panel-head"><b>Status</b><span>Hoje</span></div>
+            <span><i className="dot yellow"/> Pendentes <b>04</b></span>
+            <span><i className="dot green"/> Confirmados <b>16</b></span>
+            <span><i className="dot blue"/> Completados <b>04</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function UsersIcon({ size }: { size: number }) {
+  return <span className="users-icon" style={{ width: size, height: size }}><span/><span/></span>;
+}
+
+function FlowMockup() {
+  return (
+    <div className="product-ui flow-ui">
+      <div className="flow-topbar"><span className="ui-logo">Z<span>●</span></span><b>Meu Workspace</b><span className="ui-avatar">LF</span></div>
+      <div className="flow-body">
+        <div className="flow-sidebar">
+          <small>WORKSPACE</small>
+          <span className="flow-side-active">▣ Meus fluxos</span>
+          <span>◫ Templates</span>
+          <span>◉ Integrações</span>
+          <span>⚙ Configurações</span>
+          <div className="flow-side-bottom"><small>PROJETO</small><b>Atendimento</b><span>Bot principal</span></div>
+        </div>
+        <div className="flow-canvas">
+          <div className="flow-canvas-head"><span>Atendimento inicial</span><small>RASCUNHO</small></div>
+          <div className="flow-grid-bg"/>
+          <div className="flow-node flow-trigger"><small>TRIGGER</small><b>Mensagem recebida</b><span>WhatsApp</span></div>
+          <div className="flow-connector c1"/>
+          <div className="flow-node flow-action"><small>AÇÃO</small><b>Consultar cliente</b><span>Buscar dados</span></div>
+          <div className="flow-connector c2"/>
+          <div className="flow-node flow-condition"><small>CONDIÇÃO</small><b>Cliente existe?</b><span>Sim / Não</span></div>
+          <div className="flow-connector c3"/>
+          <div className="flow-node flow-message"><small>MENSAGEM</small><b>Enviar resposta</b><span>Olá! Como posso ajudar?</span></div>
+          <div className="flow-minimap"><i/><i/><i/><i/></div>
+        </div>
+        <div className="flow-properties"><small>PROPRIEDADES</small><b>Consultar cliente</b><label>Integração</label><div>Booking API <ChevronRight size={11}/></div><label>Ação</label><div>Buscar cliente <ChevronRight size={11}/></div><label>STATUS</label><strong>● Conectado</strong></div>
+      </div>
+    </div>
+  );
+}
+
+function WhatsAppMockup() {
+  return (
+    <div className="product-ui whatsapp-ui">
+      <div className="wa-sidebar">
+        <div className="ui-logo">Z<span>●</span></div>
+        <small>COMUNICAÇÃO</small>
+        <span className="wa-active"><MessageCircle size={13}/> Visão geral</span>
+        <span><MessageCircle size={13}/> Instâncias</span>
+        <span><Send size={13}/> Mensagens</span>
+        <span><Network size={13}/> Webhooks</span>
+        <span><Zap size={13}/> Eventos</span>
+      </div>
+      <div className="wa-main">
+        <div className="ui-topbar"><span>WhatsApp / Visão geral</span><span className="ui-avatar">LF</span></div>
+        <div className="wa-heading"><div><small>INFRAESTRUTURA</small><b>Comunicação conectada.</b></div><span className="wa-live">● 3 ATIVAS</span></div>
+        <div className="wa-cards">
+          <div><small>INSTÂNCIAS</small><strong>03</strong><span>todas conectadas</span></div>
+          <div><small>MENSAGENS HOJE</small><strong>1.284</strong><span>+14,2%</span></div>
+          <div><small>EVENTOS</small><strong>426</strong><span>processados</span></div>
+        </div>
+        <div className="wa-content">
+          <div className="wa-panel"><div className="ui-panel-head"><b>Instâncias</b><span>Ver todas</span></div><p><i className="dot green"/> Atendimento <b>online</b><em>+5511••••8821</em></p><p><i className="dot green"/> Comercial <b>online</b><em>+5538••••1044</em></p><p><i className="dot yellow"/> Suporte <b>conectando</b><em>+5531••••2210</em></p></div>
+          <div className="wa-panel wa-message-panel"><div className="ui-panel-head"><b>Última atividade</b><span>agora</span></div><div className="wa-message"><span>10:42</span><b>Booking → WhatsApp</b><small>Novo agendamento confirmado</small></div><div className="wa-message"><span>10:39</span><b>Flow → WhatsApp</b><small>Jornada de atendimento acionada</small></div></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ProductScene({ product, active }: { product: (typeof products)[number]; active: boolean }) {
-  const Icon = product.icon;
   return (
     <article className={"product-scene product-" + product.color + (active ? " is-active" : "")}>
       <div className="scene-copy">
@@ -86,29 +191,18 @@ function ProductScene({ product, active }: { product: (typeof products)[number];
           Explorar {product.name.replace("Zailom ", "")} <ArrowUpRight size={17} />
         </a>
       </div>
-
-      <div className="scene-art" aria-hidden="true">
-        <div className="scene-grid" />
-        <div className="signal signal-one" />
-        <div className="signal signal-two" />
-        <div className="dashboard-window">
-          <div className="window-top"><span>zailom / {product.number}</span><span><Icon size={16} /></span></div>
-          <div className="window-main">
-            <div className="window-heading">
-              <span>ECOSSISTEMA</span>
-              <strong>{product.name.replace("Zailom ", "")}</strong>
-            </div>
-            <div className="mini-bars"><i /><i /><i /><i /><i /></div>
-            <div className="window-cards">
-              <span>OPERAÇÃO</span><span>AUTOMAÇÃO</span><span>COMUNICAÇÃO</span>
-            </div>
-          </div>
-        </div>
-        <div className="floating-node node-a"><Zap size={15} /> LIVE</div>
-        <div className="floating-node node-b"><Network size={15} /> CONNECTED</div>
+      <div className="scene-art product-interface" aria-hidden="true">
+        <div className="interface-glow" />
+        {activeProductMarkup(product.color)}
       </div>
     </article>
   );
+}
+
+function activeProductMarkup(color: string) {
+  if (color === "violet") return <FlowMockup />;
+  if (color === "green") return <WhatsAppMockup />;
+  return <BookingMockup />;
 }
 
 export default function Home() {
